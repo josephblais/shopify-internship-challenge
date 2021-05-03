@@ -1,8 +1,11 @@
+import {useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar'
 
 function App() {
+  const [term, setTerm] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,7 +13,8 @@ function App() {
         <p>
           Hello World.
         </p>
-        <SearchBar />
+        <SearchBar onSearch={term => setTerm(term)}/>
+        <h3>App level {term}</h3>
       </header>
     </div>
   );
