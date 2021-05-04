@@ -31,7 +31,7 @@ function App() {
  }
 
 const disableButton = (id) => {
-  return nominations.some(nomination => nomination.imdbID === id)
+  return nominations.some(nomination => nomination.imdbID === id) || nominations.length === 5
 }
 
   return (
@@ -46,6 +46,12 @@ const disableButton = (id) => {
         <h3>Movies about {term}:</h3>
         <SearchResults 
           results={results}
+          addNomination={addNomination}
+          disableButton={disableButton}
+          />
+          <h3>👇🏻Nominations👇🏻</h3>
+        <SearchResults 
+          results={nominations}
           addNomination={addNomination}
           disableButton={disableButton}
           />
