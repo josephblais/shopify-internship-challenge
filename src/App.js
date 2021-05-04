@@ -12,14 +12,12 @@ function App() {
   useEffect(() => {
     if (term) {
 
-      getMovies("larry")
+      getMovies(term)
       .then(res => setResults(res))
-      // const movies = apiTest
-      console.log(results)
-      // console.log("🧶",movies)
     }
   }, [term])
-
+  
+  console.log(results)
   return (
     <div className="App">
       <header className="App-header">
@@ -29,7 +27,6 @@ function App() {
         </p>
         <SearchBar onSearch={term => setTerm(term)}/>
         <h3>App level {term}</h3>
-        {/* <h4>API Key: {process.env.REACT_APP_API_KEY}</h4> */}
       </header>
     </div>
   );
