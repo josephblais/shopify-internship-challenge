@@ -6,11 +6,19 @@ import getMovies from './helpers/getMovies'
 
 function App() {
   const [term, setTerm] = useState("");
+  const [results, setResults] = useState([]);
 
-  const apiTest = getMovies("larry")
-  const movies = apiTest
-  console.log(apiTest)
-  console.log("🧶",movies)
+  
+  useEffect(() => {
+    if (term) {
+
+      getMovies("larry")
+      .then(res => setResults(res))
+      // const movies = apiTest
+      console.log(results)
+      // console.log("🧶",movies)
+    }
+  }, [term])
 
   return (
     <div className="App">
