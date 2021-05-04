@@ -26,11 +26,13 @@ function App() {
   }, [term])
   
  const addNomination = (movie) => {
-  // setNominations(prev => [...prev, movie])
-  console.log(movie);
+  setNominations(prev => [...prev, movie])
+  console.log(nominations);
  }
 
-//  console.log("RESULTS: ", results)
+const disableButton = (id) => {
+  return nominations.some(nomination => nomination.imdbID === id)
+}
 
   return (
     <div className="App">
@@ -39,12 +41,13 @@ function App() {
         <p>
           Hello World.
         </p>
-        <Button click={() => addNomination("😩")} name={"TEST"}></Button>
+        <Button click={() => addNomination("😩")} name={"TEST"} disable={disableButton("tt9231040")}></Button>
         <SearchBar onSearch={term => setTerm(term)}/>
         <h3>Movies about {term}:</h3>
         <SearchResults 
           results={results}
           addNomination={addNomination}
+          disableButton={disableButton}
           />
       </header>
     </div>
