@@ -2,27 +2,19 @@ import {useState, useEffect } from 'react';
 import logo from './PFP.png';
 import './App.css';
 import SearchBar from './components/SearchBar'
+import SearchResults from './components/SearchResults';
 import getMovies from './helpers/getMovies'
+import Button from './components/Button';
 
 function App() {
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState([1]);
+  const [results, setResults] = useState([]);
+  const [nominations, setNominations] = useState([]);
 
   
   useEffect(() => {
     // Perform API call on search bar input
     if (term) {
-      // const API_KEY = process.env.REACT_APP_API_KEY;
-      // const OMDB_URL = `https://www.omdbapi.com/`;
-      // async function getMovies(query) {
-      //   const encodedQuery = query.trim().replace(" ", "+")
-      //   const movies = await fetch(`${OMDB_URL}?apikey=${API_KEY}&s=${encodedQuery}&type=movie&page=1`)
-      //                       .then(res => res.json())
-      //                       .then(results => setResults(results.Search))
-      
-      //   return movies;
-      // }
-
       getMovies(term)
       .then(results => results.length > 1 && setResults(results))
       .catch(() => setResults([]))
@@ -33,8 +25,12 @@ function App() {
     }
   }, [term])
   
-  console.log("RESULTS ",results)
-  console.log("TERM :", term, "TERM LENGTH: ", term.length)
+ const addNomination = (movie) => {
+  // setNominations(prev => [...prev, movie])
+  console.log(movie);
+ }
+
+//  console.log("RESULTS: ", results)
 
   return (
     <div className="App">
@@ -43,11 +39,13 @@ function App() {
         <p>
           Hello World.
         </p>
+        <Button click={() => addNomination("😩")} name={"TEST"}></Button>
         <SearchBar onSearch={term => setTerm(term)}/>
         <h3>Movies about {term}:</h3>
-        {/* {results.map(result => {return(
-        <p><em>{result.Title}</em> {result.Year}</p>
-        )})} */}
+        <SearchResults 
+          results={results}
+          addNomination={addNomination}
+          />
       </header>
     </div>
   );

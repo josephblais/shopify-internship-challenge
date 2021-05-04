@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import useDebounce from "../hooks/useDebounce";
 
 export default function Searchbar({onSearch}) {
