@@ -2,9 +2,9 @@ import {useState, useEffect } from 'react';
 import logo from './PFP.png';
 import './App.css';
 import SearchBar from './components/SearchBar'
-import SearchResults from './components/SearchResults';
 import getMovies from './helpers/getMovies'
 import Button from './components/Button';
+import MovieList from './components/MovieList';
 
 function App() {
   const [term, setTerm] = useState("");
@@ -16,7 +16,7 @@ function App() {
     // Perform API call on search bar input
     if (term) {
       getMovies(term)
-      .then(results => results.length > 1 && setResults(results))
+      .then(results => results.length > 1 && setResults(uniqueResults(results)))
       .catch(() => setResults([]))
     }
     // Reset results to an empty array if the search bar is cleared
@@ -24,6 +24,15 @@ function App() {
       setResults([])
     }
   }, [term])
+
+  const uniqueResults = (unfilteredResults) => {
+    // Sometimes the API returns two identical results.
+    // Here, we use the Set class to filter out these identical results.
+    // Since each object will by default have a unique object reference,
+    // we need to convert the data into a JSON string for Set to work properly˛
+    const unique = [...new Set(unfilteredResults.map((result => JSON.stringify(result))))].map((string) => JSON.parse(string))
+    return unique;
+  }
   
  const addNomination = (movie) => {
   setNominations(prev => [...prev, movie])
@@ -42,6 +51,8 @@ const deleteThisFunction = () => {
   return false;
 }
 
+deleteThisFunction()
+
 const showNominations = () => {
   console.log("NOMINATIONS: ", nominations)
 }
@@ -51,22 +62,22 @@ const showNominations = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello World.
+          Damn shawty, it's time for the Shoppies! Who are you gonna vote for this time? Add your nominations below!
         </p>
         <button onClick={showNominations}>✅SHOW NOMINATIONS</button>
         <Button click={() => addNomination("😩")} name={"TEST"} disable={disableButton("tt9231040")}></Button>
         <SearchBar onSearch={term => setTerm(term)}/>
         <h3>Movies about {term}:</h3>
-        <SearchResults 
+        <MovieList 
           results={results}
           handleNomination={addNomination}
           disableButton={disableButton}
           />
           <h3>👇🏻Nominations👇🏻</h3>
-        <SearchResults 
+        <MovieList 
           results={nominations}
           handleNomination={removeNomination}
-          disableButton={deleteThisFunction}
+          disableButton={() => false}
           />
           <button onClick={showNominations}>✅SHOW NOMINATIONS</button>
 
