@@ -46,13 +46,6 @@ const disableButton = (id) => {
   return nominations.some(nomination => nomination.imdbID === id) || nominations.length === 5
 }
 
-const deleteThisFunction = () => {
-  console.log("🤡")
-  return false;
-}
-
-deleteThisFunction()
-
 const showNominations = () => {
   console.log("NOMINATIONS: ", nominations)
 }
@@ -71,12 +64,14 @@ const showNominations = () => {
         <MovieList 
           results={results}
           handleNomination={addNomination}
+          buttonName={"Add➕"}
           disableButton={disableButton}
           />
           <h3>👇🏻Nominations👇🏻</h3>
         <MovieList 
           results={nominations}
           handleNomination={removeNomination}
+          buttonName={"Remove➖"}
           disableButton={() => false}
           />
           <button onClick={showNominations}>✅SHOW NOMINATIONS</button>
