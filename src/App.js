@@ -27,11 +27,23 @@ function App() {
   
  const addNomination = (movie) => {
   setNominations(prev => [...prev, movie])
-  console.log(nominations);
+ }
+
+ const removeNomination = (movie) => {
+  setNominations(nominations.filter(nomination => nomination.imdbID != movie.imdbID))
  }
 
 const disableButton = (id) => {
   return nominations.some(nomination => nomination.imdbID === id) || nominations.length === 5
+}
+
+const deleteThisFunction = () => {
+  console.log("🤡")
+  return false;
+}
+
+const showNominations = () => {
+  console.log("NOMINATIONS: ", nominations)
 }
 
   return (
@@ -41,20 +53,23 @@ const disableButton = (id) => {
         <p>
           Hello World.
         </p>
+        <button onClick={showNominations}>✅SHOW NOMINATIONS</button>
         <Button click={() => addNomination("😩")} name={"TEST"} disable={disableButton("tt9231040")}></Button>
         <SearchBar onSearch={term => setTerm(term)}/>
         <h3>Movies about {term}:</h3>
         <SearchResults 
           results={results}
-          addNomination={addNomination}
+          handleNomination={addNomination}
           disableButton={disableButton}
           />
           <h3>👇🏻Nominations👇🏻</h3>
         <SearchResults 
           results={nominations}
-          addNomination={addNomination}
-          disableButton={disableButton}
+          handleNomination={removeNomination}
+          disableButton={deleteThisFunction}
           />
+          <button onClick={showNominations}>✅SHOW NOMINATIONS</button>
+
       </header>
     </div>
   );

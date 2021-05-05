@@ -1,13 +1,13 @@
 import Button from "./Button";
 
 export default function SearchResults(props) {
-  const {results, addNomination, disableButton} = props;
+  const {results, handleNomination, disableButton} = props;
 
   return (
     results.map(result => {return(
     <p>
       <Button 
-      click={() => addNomination(result)}
+      click={() => handleNomination(result)}
       name={"Add"}
       disable={disableButton(result.imdbID)}
       />
