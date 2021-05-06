@@ -1,12 +1,20 @@
+import styled from 'styled-components';
+
+const ActionButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 2em;
+`;
+
 export default function Button(props) {
   const {click, name, disable} = props;
 
   return (
-    <button 
+    <ActionButton 
       onClick={click} 
       disabled={disable}
       >
       {name}
-    </button>
+    </ActionButton>
   )
 }

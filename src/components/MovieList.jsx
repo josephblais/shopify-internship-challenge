@@ -1,5 +1,5 @@
-import Button from "./Button";
-import styled from "styled-components";
+import Button from './Button';
+import styled from 'styled-components';
 
 const ListContainer = styled.div`
   box-shadow: -2rem -2rem 5px 0px #011502;
@@ -20,6 +20,13 @@ const ListTitle = styled.h3`
 
 `;
 
+const Year = styled.span`
+opacity: 20%;
+font-size: 1.5em;
+position: relative;
+left: -20px;
+`;
+
 export default function MovieList(props) {
   const { results, handleNomination, disableButton, buttonName, title } = props;
   return (
@@ -34,7 +41,8 @@ export default function MovieList(props) {
                 name={buttonName}
                 disable={disableButton(result.imdbID)}
               />
-              <em>{result.Title}</em> {result.Year}
+              <em>{result.Title}</em> 
+              <Year>{result.Year}</Year>
             </li>
           );
         })}

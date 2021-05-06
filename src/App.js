@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import SearchBar from "./components/SearchBar";
-import getMovies from "./helpers/getMovies";
-import MovieList from "./components/MovieList";
-import Banner from "./components/Banner";
+import { useState, useEffect } from 'react';
+import './App.css';
+import SearchBar from './components/SearchBar';
+import getMovies from './helpers/getMovies';
+import MovieList from './components/MovieList';
+import Banner from './components/Banner';
+import Lists from './components/Lists';
 
 function App() {
   const [term, setTerm] = useState("");
@@ -60,7 +61,16 @@ function App() {
 
         {nominations.length === 5 && <Banner />}
 
-        {results.length > 0 && (
+        <Lists 
+          results={results}
+          nominations={nominations}
+          term={term}
+          addNomination={addNomination}
+          removeNomination={removeNomination}
+          disableButton={disableButton}
+        />
+
+        {/* {results.length > 0 && (
           <MovieList
             results={results}
             handleNomination={addNomination}
@@ -78,7 +88,7 @@ function App() {
             disableButton={() => false}
             title={"Nominations"}
           />
-        )}
+        )} */}
         {/* <button onClick={showNominations}>✅SHOW NOMINATIONS</button> */}
       </header>
     </div>
