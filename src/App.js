@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import logo from "./PFP.png";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import getMovies from "./helpers/getMovies";
-import Button from "./components/Button";
 import MovieList from "./components/MovieList";
 import Banner from "./components/Banner";
 

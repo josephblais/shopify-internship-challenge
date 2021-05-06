@@ -7,6 +7,7 @@ const ListContainer = styled.div`
   background: #f7fe72;
   color: black;
   border: 5px solid white;
+  margin-top: 4rem;
 `;
 
 const List = styled.ul`
