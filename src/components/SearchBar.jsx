@@ -2,9 +2,19 @@ import { useState, useEffect } from 'react';
 import useDebounce from '../hooks/useDebounce';
 import styled from 'styled-components';
 
-const Title = styled.h1`
-  text-align: right;
-  color: red;
+const HiddenLabel = styled.label`
+display: none
+`;
+
+const SearchBar = styled.input`
+  background: none;
+  border: none;
+  border-bottom: 3px solid white;
+  height: 2em;
+  max-width: 80%;
+  color: white;
+  font-size: 2em;
+  &:focus { outline: none};
 `;
 
 export default function Searchbar({onSearch}) {
@@ -23,10 +33,10 @@ export default function Searchbar({onSearch}) {
     <>
       <form onSubmit={(event) => event.preventDefault()}>
         {/* This label is hidden but is visible for screen readers */}
-        <label htmlFor="search-bar">
+        <HiddenLabel htmlFor="search-bar">
           <span className="visually-hidden">Search Films</span>
-        </label>
-        <input
+        </HiddenLabel>
+        <SearchBar
           type="text"
           id="search-bar"
           placeholder="Search Films"
@@ -35,7 +45,6 @@ export default function Searchbar({onSearch}) {
         />
       </form>
       <h2>{term}</h2>
-      <Title>Heyoo</Title>
     </>
   );
 }
