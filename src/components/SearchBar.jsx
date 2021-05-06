@@ -1,5 +1,11 @@
-import { useState, useEffect } from "react";
-import useDebounce from "../hooks/useDebounce";
+import { useState, useEffect } from 'react';
+import useDebounce from '../hooks/useDebounce';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  text-align: right;
+  color: red;
+`;
 
 export default function Searchbar({onSearch}) {
   const [value, setValue] = useState("");
@@ -29,6 +35,7 @@ export default function Searchbar({onSearch}) {
         />
       </form>
       <h2>{term}</h2>
+      <Title>Heyoo</Title>
     </>
   );
 }
