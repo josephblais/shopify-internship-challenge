@@ -10,6 +10,7 @@ const SearchBar = styled.input`
   background: none;
   border: none;
   border-bottom: 3px solid white;
+  filter: drop-shadow(-30px -20px 5px #000000);
   height: 2em;
   max-width: 80%;
   color: white;
@@ -44,7 +45,6 @@ export default function Searchbar({onSearch}) {
           name="s"
         />
       </form>
-      <h2>{term}</h2>
     </>
   );
 }
