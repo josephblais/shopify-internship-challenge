@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar'
 import getMovies from './helpers/getMovies'
 import Button from './components/Button';
 import MovieList from './components/MovieList';
+import Banner from './components/Banner';
 
 function App() {
   const [term, setTerm] = useState("");
@@ -64,14 +65,17 @@ const showNominations = () => {
         <MovieList 
           results={results}
           handleNomination={addNomination}
-          buttonName={"Add➕"}
+          buttonName={"+"}
           disableButton={disableButton}
           />
+
+         {(nominations.length === 5) && <Banner />}
+        
           <h3>👇🏻Nominations👇🏻</h3>
         <MovieList 
           results={nominations}
           handleNomination={removeNomination}
-          buttonName={"Remove➖"}
+          buttonName={"-"}
           disableButton={() => false}
           />
           <button onClick={showNominations}>✅SHOW NOMINATIONS</button>
