@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useDebounce from '../hooks/useDebounce';
 import styled from 'styled-components';
+import Banner from './Banner'
 
 const HiddenLabel = styled.label`
 display: none
@@ -46,6 +47,7 @@ export default function Searchbar({onSearch}) {
           name="s"
         />
       </form>
+      {/* <Banner></Banner> */}
     </>
   );
 }
