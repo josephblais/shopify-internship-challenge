@@ -17,7 +17,7 @@ const SearchBar = styled.input`
   color: white;
   font-size: 2em;
   &:focus { outline: none};
-  &::placeholder { opacity: 1}
+  &::placeholder { color: white; opacity: 1}
 `;
 
 export default function Searchbar({onSearch}) {

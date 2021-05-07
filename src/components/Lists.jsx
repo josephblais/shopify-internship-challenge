@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ListsContainer = styled.div`
 position: relative;
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 align-items: flex-start;
 
 ${({ fullWidth }) => fullWidth && `

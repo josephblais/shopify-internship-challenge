@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { keyframes } from "styled-components";
+import styled from 'styled-components';
+import { keyframes } from 'styled-components';
+import { useEffect, useState } from 'react';
 
 const BannerAnimation = keyframes`
   from {  
@@ -27,7 +28,7 @@ const AnimatedBanner = styled.div`
   top: 1rem;
   right: 1rem;
   animation-name: ${BannerAnimation};
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   z-index: 100;
@@ -40,7 +41,7 @@ const AnimatedBanner = styled.div`
 
 const BigThumb = styled.span`
   position: fixed;
-  // top: 0;
+  top: 25vh;
   // right: 0;
   z-index: 101;
   // opacity: 0;
@@ -50,7 +51,17 @@ const BigThumb = styled.span`
   animation-timing-function: ease-out;  
 `;
 
+
 export default function Banner() {
+  const [visible, setVisible] = useState(true);
+
+  // Disable the thumb after a second.
+  useEffect(() => {
+    setTimeout(() => {
+      setVisible(false);
+    }, 999);
+  })
+
   return (
     <>
       <AnimatedBanner>
@@ -58,7 +69,7 @@ export default function Banner() {
           Congratulations! <br /> You've selected all your nominations!
         </h5>
       </AnimatedBanner>
-      <BigThumb>👍</BigThumb>
+     { visible && <BigThumb>👍</BigThumb>}
     </>
   );
 }
