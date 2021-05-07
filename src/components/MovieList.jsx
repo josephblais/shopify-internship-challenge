@@ -2,7 +2,8 @@ import Button from './Button';
 import styled from 'styled-components';
 
 const ListContainer = styled.div`
-  box-shadow: -2rem -2rem 5px 0px #011502;
+  box-shadow: -2rem 2rem 0px 0px #011502;
+  // box-shadow: 5px 5px 15px 5px #000;
   // filter: drop-shadow(-2em -1em 2px red);
   background: #f7fe72;
   color: black;

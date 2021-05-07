@@ -27,15 +27,17 @@ const AnimatedBanner = styled.div`
   position: absolute;
   top: 1rem;
   right: 1rem;
+  box-shadow: -5px 12px 15px 5px rgba(0,0,0,0.30);
   animation-name: ${BannerAnimation};
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   z-index: 100;
   background: black;
+  // border: 5px dashed white;
   color: white;
   border-radius: 10px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 10px 0px 10px;
   text-align: center;
 `;
 
