@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import useDebounce from '../hooks/useDebounce';
 import styled from 'styled-components';
-import Banner from './Banner'
 
 const HiddenLabel = styled.label`
 display: none
@@ -14,7 +13,7 @@ const SearchBar = styled.input`
   filter: drop-shadow(-30px 20px 15px #000000);
   height: 2em;
   max-width: 80%;
-  color: white;
+  color: black;
   font-size: 2em;
   &:focus { outline: none};
   &::placeholder { color: white; opacity: 1}
@@ -47,7 +46,6 @@ export default function Searchbar({onSearch}) {
           name="s"
         />
       </form>
-      {/* <Banner></Banner> */}
     </>
   );
 }

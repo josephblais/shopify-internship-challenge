@@ -25,7 +25,7 @@ const List = styled.ul`
 `;
 
 const ListTitle = styled.h3`
-
+  padding-left: 1em;
 `;
 
 const Year = styled.span`
