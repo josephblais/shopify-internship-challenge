@@ -8,6 +8,12 @@ const ListContainer = styled.div`
   color: black;
   border: 5px solid white;
   margin-top: 4rem;
+  width: 50vw;
+
+  ${({ smallWidth }) => smallWidth && `
+    // background: blue;
+    width: 30vw;
+  `}
 `;
 
 const List = styled.ul`
@@ -28,9 +34,9 @@ left: -20px;
 `;
 
 export default function MovieList(props) {
-  const { results, handleNomination, disableButton, buttonName, title } = props;
+  const { smallWidth, results, handleNomination, disableButton, buttonName, title } = props;
   return (
-    <ListContainer>
+    <ListContainer smallWidth={smallWidth}>
       <ListTitle>{title}</ListTitle>
       <List>
         {results.map((result) => {

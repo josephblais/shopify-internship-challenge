@@ -1,6 +1,16 @@
 import MovieList from "./MovieList";
-import styled from 'styled-components';
+import styled from "styled-components";
 
+const ListsContainer = styled.div`
+position: relative;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+
+${({ fullWidth }) => fullWidth && `
+  width: 80%;
+  `}
+`;
 
 export default function Lists(props) {
   const {
@@ -11,10 +21,20 @@ export default function Lists(props) {
     removeNomination,
     disableButton,
   } = props;
+
+  const nominationsExist = () => {
+    return nominations.length > 0;
+  };
+  
+  const resultsExist = () => {
+    return results.length > 0;
+  };
+
   return (
-    <>
+    <ListsContainer fullWidth={nominationsExist() && resultsExist()}>
       {results.length > 0 && (
         <MovieList
+          smallWidth={nominationsExist()}
           results={results}
           handleNomination={addNomination}
           buttonName={"+"}
@@ -25,6 +45,7 @@ export default function Lists(props) {
 
       {nominations.length > 0 && (
         <MovieList
+          smallWidth={resultsExist()}
           results={nominations}
           handleNomination={removeNomination}
           buttonName={"-"}
@@ -32,6 +53,6 @@ export default function Lists(props) {
           title={"Nominations"}
         />
       )}
-    </>
+    </ListsContainer>
   );
 }

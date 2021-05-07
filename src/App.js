@@ -69,27 +69,6 @@ function App() {
           removeNomination={removeNomination}
           disableButton={disableButton}
         />
-
-        {/* {results.length > 0 && (
-          <MovieList
-            results={results}
-            handleNomination={addNomination}
-            buttonName={"+"}
-            disableButton={disableButton}
-            title={`Movies about ${term}`}
-          />
-        )}
-
-        {nominations.length > 0 && (
-          <MovieList
-            results={nominations}
-            handleNomination={removeNomination}
-            buttonName={"-"}
-            disableButton={() => false}
-            title={"Nominations"}
-          />
-        )} */}
-        {/* <button onClick={showNominations}>✅SHOW NOMINATIONS</button> */}
       </header>
     </div>
   );
