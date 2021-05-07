@@ -7,6 +7,7 @@ const ListContainer = styled.div`
   background: #f7fe72;
   color: black;
   border: 5px solid white;
+  border-radius: 10px;
   margin-top: 4rem;
   width: 50vw;
 
