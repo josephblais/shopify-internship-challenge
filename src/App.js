@@ -54,12 +54,16 @@ function App() {
     );
   };
 
+  const clearSearch = () => {
+    setResults([]);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <SearchBar onSearch={(term) => setTerm(term)} />
 
-        {nominations.length === 5 && <Banner />}
+        {nominations.length === 5 && <Banner results={results} clearSearch={clearSearch}/>}
 
         <Lists 
           results={results}

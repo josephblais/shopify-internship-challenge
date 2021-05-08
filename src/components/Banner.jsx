@@ -54,8 +54,9 @@ const BigThumb = styled.span`
   animation-timing-function: ease-out;
 `;
 
-export default function Banner() {
+export default function Banner(props) {
   const [visible, setVisible] = useState(true);
+  const {clearSearch, results} = props;
 
   // Disable the thumb after a second.
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function Banner() {
         <h5>
           Congratulations! <br /> You've selected all your nominations!
         </h5>
-        <Button click={(nothing) => nothing} white={true} name={"Admire them ☜(꒡⌓꒡)"}/>
+      { results.length > 0 && <Button click={clearSearch} white={true} name={"Admire them ☜(꒡⌓꒡)"}/>}
       </AnimatedBanner>
       {visible && <BigThumb>👍</BigThumb>}
     </>
