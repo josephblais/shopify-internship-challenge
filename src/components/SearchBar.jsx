@@ -9,7 +9,7 @@ display: none
 const SearchBar = styled.input`
   background: none;
   border: none;
-  border-bottom: 3px solid white;
+  border-bottom: 5px solid white;
   filter: drop-shadow(-30px 20px 15px #000000);
   height: 2em;
   max-width: 80%;

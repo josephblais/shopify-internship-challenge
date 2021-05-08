@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { keyframes } from 'styled-components';
-import { useEffect, useState } from 'react';
+import styled from "styled-components";
+import { keyframes } from "styled-components";
+import { useEffect, useState } from "react";
+import Button from "./Button";
 
 const BannerAnimation = keyframes`
   from {  
@@ -27,7 +28,7 @@ const AnimatedBanner = styled.div`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  box-shadow: -5px 12px 15px 5px rgba(0,0,0,0.30);
+  box-shadow: -5px 12px 15px 5px rgba(0, 0, 0, 0.3);
   animation-name: ${BannerAnimation};
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -50,9 +51,8 @@ const BigThumb = styled.span`
   animation-name: ${ThumbAnimation};
   animation-duration: 1s;
   animation-iteration-count: 1;
-  animation-timing-function: ease-out;  
+  animation-timing-function: ease-out;
 `;
-
 
 export default function Banner() {
   const [visible, setVisible] = useState(true);
@@ -62,7 +62,7 @@ export default function Banner() {
     setTimeout(() => {
       setVisible(false);
     }, 999);
-  })
+  });
 
   return (
     <>
@@ -70,8 +70,9 @@ export default function Banner() {
         <h5>
           Congratulations! <br /> You've selected all your nominations!
         </h5>
+        <Button click={(nothing) => nothing} white={true} name={"Admire them ☜(꒡⌓꒡)"}/>
       </AnimatedBanner>
-     { visible && <BigThumb>👍</BigThumb>}
+      {visible && <BigThumb>👍</BigThumb>}
     </>
   );
 }
