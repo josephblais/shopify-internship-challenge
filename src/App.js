@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import getMovies from './helpers/getMovies';
-import MovieList from './components/MovieList';
 import Banner from './components/Banner';
 import Lists from './components/Lists';
 
@@ -59,8 +58,7 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+      <div className="App">
         <SearchBar onSearch={(term) => setTerm(term)} />
 
         {nominations.length === 5 && <Banner results={results} clearSearch={clearSearch}/>}
@@ -73,7 +71,6 @@ function App() {
           removeNomination={removeNomination}
           disableButton={disableButton}
         />
-      </header>
     </div>
   );
 }
