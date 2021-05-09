@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/shopify-internship-challenge/static/css/main.4d1d64f5.chunk.css",
-    "main.js": "/shopify-internship-challenge/static/js/main.467bf2f6.chunk.js",
-    "main.js.map": "/shopify-internship-challenge/static/js/main.467bf2f6.chunk.js.map",
+    "main.css": "/shopify-internship-challenge/static/css/main.9de7fb9e.chunk.css",
+    "main.js": "/shopify-internship-challenge/static/js/main.44019e55.chunk.js",
+    "main.js.map": "/shopify-internship-challenge/static/js/main.44019e55.chunk.js.map",
     "runtime-main.js": "/shopify-internship-challenge/static/js/runtime-main.cc1ca893.js",
     "runtime-main.js.map": "/shopify-internship-challenge/static/js/runtime-main.cc1ca893.js.map",
     "static/js/2.074764ba.chunk.js": "/shopify-internship-challenge/static/js/2.074764ba.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.14840091.chunk.js": "/shopify-internship-challenge/static/js/3.14840091.chunk.js",
     "static/js/3.14840091.chunk.js.map": "/shopify-internship-challenge/static/js/3.14840091.chunk.js.map",
     "index.html": "/shopify-internship-challenge/index.html",
-    "static/css/main.4d1d64f5.chunk.css.map": "/shopify-internship-challenge/static/css/main.4d1d64f5.chunk.css.map",
+    "static/css/main.9de7fb9e.chunk.css.map": "/shopify-internship-challenge/static/css/main.9de7fb9e.chunk.css.map",
     "static/js/2.074764ba.chunk.js.LICENSE.txt": "/shopify-internship-challenge/static/js/2.074764ba.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cc1ca893.js",
     "static/js/2.074764ba.chunk.js",
-    "static/css/main.4d1d64f5.chunk.css",
-    "static/js/main.467bf2f6.chunk.js"
+    "static/css/main.9de7fb9e.chunk.css",
+    "static/js/main.44019e55.chunk.js"
   ]
 }
