@@ -3,6 +3,7 @@
 - [My App](https://josephblais.github.io/shopify-internship-challenge/)
 - [The Challenge](https://docs.google.com/document/d/1SdR9rQpocsH5rPTOcxr9noqHRld5NJlylKO9Hf94U8U/edit#heading=h.c7xqfkhsqnd4)
 
+![Shoppies UX](https://raw.githubusercontent.com/josephblais/shopify-internship-challenge/main/public/shoppies.gif)
 
 ## Features
 ---
