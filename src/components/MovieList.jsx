@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const ListContainer = styled.div`
   box-shadow: -2rem 2rem 0px 0px #011502;
-  // box-shadow: 5px 5px 15px 5px #000;
-  // filter: drop-shadow(-2em -1em 2px red);
   background: #f7fe72;
   color: black;
   border: 5px solid white;
@@ -13,8 +11,12 @@ const ListContainer = styled.div`
   width: 50vw;
 
   ${({ smallWidth }) => smallWidth && `
-    // background: blue;
-    width: 30vw;
+    @media screen and (min-width: 720px) {
+      width: 30vw;
+    }
+    @media screen and (max-width: 720px) {
+      width: 75vw;
+    }
   `}
 `;
 

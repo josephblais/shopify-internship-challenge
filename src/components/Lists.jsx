@@ -8,8 +8,15 @@ justify-content: space-around;
 align-items: flex-start;
 
 ${({ fullWidth }) => fullWidth && `
+@media screen and (min-width: 720px) {
   width: 80%;
-  `}
+}
+@media screen and (max-width: 720px) {
+  flex-direction: column;
+}
+`}
+
+
 `;
 
 export default function Lists(props) {
