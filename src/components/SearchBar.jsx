@@ -12,7 +12,7 @@ const SearchBar = styled.input`
   border-bottom: 5px solid white;
   filter: drop-shadow(-30px 20px 15px #000000);
   height: 2em;
-  max-width: 80%;
+  max-width: 75vw;
   color: black;
   font-size: 2em;
   &:focus { outline: none};
